@@ -14,7 +14,6 @@ export default function Wiki() {
          </Head>
          <main>
             <Navbar/>
-            <h1>Wiki Page</h1>
          </main>
       </>
    )

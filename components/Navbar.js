@@ -32,13 +32,23 @@ const Navbar = () => {
                      </Link>
                   </li>
                   <li className="nav-item">
-                     <Link href={"/wiki"}>
+                     <Link href={"/news"}>
+                        <a className={CheckActive("/news")}>News</a>
+                     </Link>
+                  </li>
+                  <li className="nav-item">
+                     <Link href={"/about"}>
+                        <a className={CheckActive("/about")}>About</a>
+                     </Link>
+                  </li>
+                  <li className="nav-item">
+                     <Link href={"/wiki/home"}>
                         <a className={CheckActive("/wiki/[[...params]]")}>Wiki</a>
                      </Link>
                   </li>
                </ul>
                <form className="d-flex">
-                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <input className="form-control me-2" type="search" placeholder="Search Wiki" aria-label="Search"/>
                   <button className="btn btn-outline-success" type="submit">Search</button>
                </form>
             </div>

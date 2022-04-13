@@ -1,5 +1,17 @@
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+
 export default function About() {
+
    return (
-      <h1>About Page</h1>
+      <>
+         <Head>
+            <title>Aether Aeon - About</title>
+            <link rel="icon" href="/favicon.ico" />
+         </Head>
+         <main>
+            <Navbar/>
+         </main>
+      </>
    )
 }
