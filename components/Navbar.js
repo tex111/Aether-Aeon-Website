@@ -1,60 +1,56 @@
 import Link from "next/link";
-import {useRouter} from "next/router";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
+  const router = useRouter();
 
-   const router = useRouter();
+  const [showNavMenu, setShowNavMenu] = useState(false);
 
-   function CheckActive(linkRoute) {
-      let result = "nav-link";
+  function CheckActive(linkRoute) {
+    let result = "mr-4 text-gray-400";
 
-      if (router.pathname === linkRoute) {
-         result = "nav-link active"
-      }
-      
-      return result;
-   }
+    if (router.pathname === linkRoute) {
+      result = "mr-4";
+    }
 
-   return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-         <div className="container-fluid">
-            <a className="navbar-brand">Aether Aeon</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-               <span className="navbar-toggler-icon"/>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                     <Link href={"/"}>
-                        <a className={CheckActive("/")}>Home</a>
-                     </Link>
-                  </li>
-                  <li className="nav-item">
-                     <Link href={"/news"}>
-                        <a className={CheckActive("/news")}>News</a>
-                     </Link>
-                  </li>
-                  <li className="nav-item">
-                     <Link href={"/about"}>
-                        <a className={CheckActive("/about")}>About</a>
-                     </Link>
-                  </li>
-                  <li className="nav-item">
-                     <Link href={"/wiki/home"}>
-                        <a className={CheckActive("/wiki/[[...params]]")}>Wiki</a>
-                     </Link>
-                  </li>
-               </ul>
-               <form className="d-flex">
-                  <input className="form-control me-2" type="search" placeholder="Search Wiki" aria-label="Search"/>
-                  <button className="btn btn-outline-success" type="submit">Search</button>
-               </form>
+    return result;
+  }
+
+  return (
+    <nav className="fixed top-0 left-0 w-screen h-auto mb-4 bg-slate-900">
+      <div className="flex flex-wrap px-4 py-4 md:px-8 items-center text-white">
+        <div className="flex w-full justify-between">
+          <div className="flex">
+            <div className="mr-8 text-xl whitespace-nowrap">Aether Aeon</div>
+            <div className="hidden md:flex">
+              <Link href="/">
+                <a className={CheckActive("/")}>Home</a>
+              </Link>
+              <Link href="/news">
+                <a className={CheckActive("/news")}>News</a>
+              </Link>
+              <Link href="/about">
+                <a className={CheckActive("/about")}>About</a>
+              </Link>
+              <Link href="/wiki">
+                <a className={CheckActive("/wiki/[[...params]]")}>Wiki</a>
+              </Link>
             </div>
-         </div>
-      </nav>
-   )
-}
+          </div>
+          <div className="flex">
+            <button className="md:hidden flex items-center px-2 py-2 border rounded border-white">
+              <FaBars />
+            </button>
+            <div className="hidden md:flex">Searchbar</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;

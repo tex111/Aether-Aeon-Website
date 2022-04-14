@@ -1,17 +1,14 @@
-import Head from "next/head";
+import HeadComponent from "../components/HeadComponent";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
-   
-   return (
-      <>
-         <Head>
-            <title>Aether Aeon - Home</title>
-            <link rel="icon" href="/favicon.ico" />
-         </Head> 
-         <main>
-           <Navbar/>
-         </main>
-      </>
-   )
+  const pages = [{ title: "Alpha release" }, { title: "Patreon Launched" }];
+  return (
+    <>
+      <HeadComponent pagename="Home" />
+      <Navbar />
+      <main></main>
+      <footer></footer>
+    </>
+  );
 }
