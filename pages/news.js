@@ -1,10 +1,10 @@
-import HeadComponent from "../components/HeadComponent";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 
 export default function News() {
   return (
     <>
-      <HeadComponent pagename="News" />
+      <Header pageName="News" />
       <Navbar />
       <main></main>
       <footer></footer>

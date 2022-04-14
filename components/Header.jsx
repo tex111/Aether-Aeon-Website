@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const HeadComponent = (props) => {
+const Header = (props) => {
   return (
     <Head>
       <title>Aether Aeon - {props.pageName}</title>
@@ -9,4 +9,4 @@ const HeadComponent = (props) => {
   );
 };
 
-export default HeadComponent;
+export default Header;

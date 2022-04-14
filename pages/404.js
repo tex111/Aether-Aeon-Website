@@ -1,10 +1,10 @@
-import HeadComponent from "../components/HeadComponent";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 
 export default function PageNotFound() {
   return (
     <>
-      <HeadComponent pagename="404" />
+      <Header pageName="404" />
       <Navbar />
       <main></main>
       <footer></footer>

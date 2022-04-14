@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import HeadComponent from "../../components/HeadComponent";
+import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 
 export default function Wiki() {
@@ -8,7 +8,7 @@ export default function Wiki() {
 
   return (
     <>
-      <HeadComponent pagename="Wiki" />
+      <Header pageName="Wiki" />
       <Navbar />
       <main></main>
       <footer></footer>
