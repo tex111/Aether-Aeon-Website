@@ -8,6 +8,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const [showNavMenu, setShowNavMenu] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   function CheckActive(linkRoute) {
     let result = "";
@@ -47,6 +48,8 @@ const Navbar = () => {
           <div className="hidden md:flex w-1/4">
             <input
               type="text"
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
               className="hidden md:flex px-2 py-1 pl-4 mr-4 w-full rounded border
               placeholder:text-slate-300 bg-slate-700 border-white 
               focus:ring-blue-600 focus:border-blue-600"
@@ -61,13 +64,14 @@ const Navbar = () => {
             </button>
           </div>
           <button
+            onClick={() => setShowNavMenu(!showNavMenu)}
             type="button"
             className="flex md:hidden items-center px-2 py-2 border rounded border-white"
           >
             <FaBars />
           </button>
         </div>
-        <div className="flex flex-col md:hidden">
+        <div className={showNavMenu ? "flex flex-col md:hidden" : "hidden"}>
           <Link href="/">
             <a className={CheckActive("/") + "mt-4 self-center"}>Home</a>
           </Link>
@@ -89,6 +93,8 @@ const Navbar = () => {
           <div className="flex mt-4">
             <input
               type="text"
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
               className="flex px-2 py-1 pl-4 mr-4 grow rounded border
               placeholder:text-slate-300 bg-slate-700 border-white 
               focus:ring-blue-600 focus:border-blue-600"
