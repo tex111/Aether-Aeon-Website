@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-screen h-auto mb-4 bg-slate-900">
+    <nav className="fixed top-0 left-0 w-screen h-auto bg-slate-900">
       <div className="flex flex-col px-4 py-4 md:px-8 font-semibold text-white text-lg">
         <div className="flex w-full justify-between">
           <div className="flex">
